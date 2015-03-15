@@ -1,0 +1,31 @@
+For serial simulation, cd serial
+run make and it will generate a program called test_serial
+To run this program, 
+
+./test_serial [num_of_rows] [num_of_cols] [generation] [input_name] 
+[output_name]
+
+To test the validity of sequential program, a file called samll_input_5*5 is available.
+One can run it
+
+./test_serial 5 5 5 small_input small_output.
+
+After validating the correctness of this program, one can run 
+
+./test_serial 500 500 5 large_input large_output. And then compare it to the result in parallel simulation.
+
+
+
+For parallel simulation, cd parallel
+run make and it will generate a program called test_parallel
+To run this program,
+
+
+mpirun -np [num_of_processes] test_parallel [num_of_rows] [num_of_cols] 
+[generation] [input_name] [output_name]
+
+To validate the correctness of this program, run 
+mpirun -np 500 500 5 large_input large_output and compare it with the results with sequential input 
+
+
+To run the test at the same time, run testall.sh
